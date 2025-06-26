@@ -17,7 +17,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
-
+export const config = {
+  runtime: "edge",
+};
 connection();
 
 app.listen(3000, () => {
